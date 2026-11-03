@@ -16,7 +16,13 @@ jobs:
   say-needs:
     needs: say-hello-inline-bash
     runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, World!"
   say-multiple:
     needs: [say-hello-inline-bash, say-needs]
     runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, World!"
   
