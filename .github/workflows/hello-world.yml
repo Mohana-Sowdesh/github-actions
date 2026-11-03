@@ -1,6 +1,8 @@
 name: Hello World Workflow
 on: 
   workflow_dispatch:
+env:
+  VAR_ENV: workflow_variable
 jobs:
   say-hello-inline-bash:
     runs-on: ubuntu-latest
@@ -9,3 +11,5 @@ jobs:
         run: echo "Hello, World!"
       - name: variables
         run: echo ${{ github.ref }}
+      - name: custom_variable
+        run: echo ${{ env.VAR_ENV }}
